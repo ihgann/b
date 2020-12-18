@@ -263,9 +263,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 493 620 392 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>988 307 1900 1051 0 0 3440 1417 </string>
+	<string>1449 0 1684 1417 0 0 5120 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1680 390 1680 1027 -1680 390 1680 1027 </string>
+	<string>0 0 1900 1051 0 0 3440 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_34B64FEA-C239-4C87-9B7F-70D62510572D</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_34B64FEA-C239-4C87-9B7F-70D62510572D_selection</key>
@@ -547,7 +547,7 @@
 			<key>Columns</key>
 			<integer>135</integer>
 			<key>Command</key>
-			<string>/usr/bin/env SCREENCAST=1 /run/current-system/sw/bin/zsh</string>
+			<string>/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -588,7 +588,7 @@
 				<real>0.11759927868843079</real>
 			</dict>
 			<key>Custom Command</key>
-			<string>Yes</string>
+			<string>No</string>
 			<key>Custom Directory</key>
 			<string>No</string>
 			<key>Default Bookmark</key>
@@ -950,7 +950,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1206,7 +1206,7 @@
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -2158,7 +2158,7 @@
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -2193,17 +2193,28 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
 	<integer>1</integer>
-	<key>NoSyncFrame_SharedPreferences</key>
+	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3440, 1440}}</string>
 		<key>topLeft</key>
-		<string>{1664, 1011}</string>
+		<string>{1417, 1209}</string>
+	</dict>
+	<key>NoSyncFrame_SharedPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {5120, 1440}}</string>
+		<key>topLeft</key>
+		<string>{318, 604}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>E90E107E-A7F2-4530-BD9D-4430A6865765</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>23</integer>
+	<integer>38</integer>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>597264450.22017896</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3024,6 +3035,8 @@
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>ShowMetalFPSmeter</key>
 	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
@@ -3053,5 +3066,9 @@
 	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.9</string>
+	<key>metalMaximizeThroughput</key>
+	<false/>
+	<key>preferIntegratedGPU</key>
+	<false/>
 </dict>
 </plist>
