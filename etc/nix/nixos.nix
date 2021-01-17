@@ -56,7 +56,7 @@ in {
     firewall = {
       allowPing = true;
       enable = true;
-      allowedTCPPorts = [ 22 80 443 ];
+      allowedTCPPorts = [ 22 80 443 8448 ];
     };
   };
 
@@ -70,6 +70,15 @@ in {
   };
 
   virtualisation.docker.enable = true;
+
+  services.matrix-synapse = {
+    enable = true;
+    server_name = "libbey.me";
+    registration_shared_secret = secrets.synapse.registrationSharedSecret;
+    extraConfig = ''
+      max_upload_size: "50M"
+    '';
+  };
 
   services.nginx = let
     defaultTLS = {
