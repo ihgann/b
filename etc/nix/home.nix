@@ -61,6 +61,9 @@ in {
 
     programs.ssh = {
       enable = true;
+      extraConfig = ''
+        Include ~/.spin/ssh/include
+      '';
       # matchBlocks."*" = {
       #   extraOptions = {
       #     UseRoaming = "no";
@@ -192,6 +195,7 @@ in {
         # vim-toml           # toml
         # vim-gvpr           # gvpr
         rust-vim # rust
+        zig-vim
         vim-pandoc # pandoc (1/2)
         vim-pandoc-syntax # pandoc (2/2)
         # yajs.vim           # JS syntax
