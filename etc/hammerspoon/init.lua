@@ -48,7 +48,7 @@ appbindings.setup({"cmd", "ctrl"}, {
   [3] = "com.brave.Browser",
   [4] = "com.tinyspeck.slackmacgap",
   [5] = nil,
-  [6] = "com.apple.Messages",
+  [6] = "com.apple.MobileSMS",
   [7] = "org.whispersystems.signal-desktop",
   [8] = nil,
   [9] = nil,
