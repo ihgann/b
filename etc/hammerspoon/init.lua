@@ -51,7 +51,7 @@ appbindings.setup({"cmd", "ctrl"}, {
   [6] = "com.apple.MobileSMS",
   [7] = "org.whispersystems.signal-desktop",
   [8] = nil,
-  [9] = nil,
+  [9] = "us.zoom.xos",
 })
 
 -- hs.hotkey.bind({"cmd", "ctrl"}, "2", itunes.toggleLibrary)
