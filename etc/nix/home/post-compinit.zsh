@@ -35,6 +35,7 @@ bindkey '®' zle-dev-open-app # Alt-R ABC Extended & Canadian English
 
 zle-dev-cd(){ dev cd ${${(z)BUFFER}}; zle .beginning-of-line; zle .kill-line; zle .accept-line }
 zle -N zle-dev-cd
+bindkey 'ð' zle-dev-cd # Alt-D ABC Extended
 bindkey '∂' zle-dev-cd # Alt-D Canadian English
 
 zle-dev-cd() {
