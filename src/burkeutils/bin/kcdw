@@ -1,2 +1,2 @@
 #!/bin/bash
-kubectl delete workspace "$@"
+kubectl describe workspace "$@"
