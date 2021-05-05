@@ -75,6 +75,8 @@ if [[ -n "${SCREENCAST}" ]]; then
   HISTFILE=$(mktemp)
 fi
 
+export KUBECONFIG=$HOME/.kube/config
+
 if [ -f /opt/dev/dev.sh ]; then
   source /opt/dev/dev.sh
 elif [ -f /run/current-system/sw/bin/dev ]; then

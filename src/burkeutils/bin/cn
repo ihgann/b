@@ -1,0 +1,17 @@
+#!/bin/bash
+
+pl1=(cat)
+if [[ $1 == "-h" ]]; then
+  shift
+  pl1=(tail -n+2)
+fi
+
+n=$1
+shift
+
+pl3=(exec cat)
+if [[ $# -gt 0 ]]; then
+  pl3=(exec xargs -n1 "$@")
+fi
+
+${pl1[*]} | awk "{print \$$n}" | ${pl3[*]}

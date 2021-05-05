@@ -7,6 +7,12 @@
 
   ls = "ls --color=auto -F";
 
+  jc = "journalctl";
+  sc = "systemctl";
+
+  x1 = "xargs -n1";
+  th = "tail -n+2";
+
   # u/uu/uuu/... {{{
   u = "cd ..";
   uu = "cd ../..";
@@ -15,16 +21,27 @@
   uuuuu = "cd ../../../../..";
   uuuuuu = "cd ../../../../../..";
   # }}}
-  # ap1/ap2/... {{{
-  ap1 = "ap 1";
-  ap2 = "ap 2";
-  ap3 = "ap 3";
-  ap4 = "ap 4";
-  ap5 = "ap 5";
-  ap6 = "ap 6";
-  ap7 = "ap 7";
-  ap8 = "ap 8";
-  ap9 = "ap 9";
+  # c$n[h]/... {{{
+  c1 = "cn 1";
+  c2 = "cn 2";
+  c3 = "cn 3";
+  c4 = "cn 4";
+  c5 = "cn 5";
+  c6 = "cn 6";
+  c7 = "cn 7";
+  c8 = "cn 8";
+  c9 = "cn 9";
+
+  c1h = "cn -h 1";
+  c2h = "cn -h 2";
+  c3h = "cn -h 3";
+  c4h = "cn -h 4";
+  c5h = "cn -h 5";
+  c6h = "cn -h 6";
+  c7h = "cn -h 7";
+  c8h = "cn -h 8";
+  c9h = "cn -h 9";
+  # }}}
   # }}}
   # Ruby / Bundler {{{
   bi = "bundle install";
