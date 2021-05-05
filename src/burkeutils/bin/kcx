@@ -1,5 +1,5 @@
 #!/bin/bash
 if [[ -p /dev/stdin ]]; then
-  set -- "$(cat)" -- "$@"
+  set -- "$(cat)" "$@"
 fi
 kubectl exec "$@"
