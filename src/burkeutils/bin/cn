@@ -1,17 +1,27 @@
-#!/bin/bash
+#!/nix/store/kl013dwzxf67l4pfrx6x2d5q6pq9gf36-bash-4.4-p23/bin/bash
 
 pl1=(cat)
+pl3=(exec cat)
+
 if [[ $1 == "-h" ]]; then
   shift
   pl1=(tail -n+2)
 fi
 
-n=$1
+col=$1
 shift
 
-pl3=(exec cat)
+pl2=(awk "{print \$$col}")
+
 if [[ $# -gt 0 ]]; then
-  pl3=(exec xargs -n1 "$@")
+  xargsArgs=(-n1)
+  for arg in "$@"; do
+    if [[ "${arg}" == "@" ]]; then
+      xargsArgs+=(-I@)
+      break
+    fi
+  done
+  pl3=(exec xargs "${xargsArgs[@]}" "$@")
 fi
 
-${pl1[*]} | awk "{print \$$n}" | ${pl3[*]}
+"${pl1[@]}" | "${pl2[@]}" | "${pl3[@]}"

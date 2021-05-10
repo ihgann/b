@@ -38,6 +38,10 @@ zle -N zle-dev-cd
 bindkey 'ð' zle-dev-cd # Alt-D ABC Extended
 bindkey '∂' zle-dev-cd # Alt-D Canadian English
 
+zle-spin() { LBUFFER+="꩜  " }
+zle -N zle-spin
+bindkey '¡' zle-spin # Alt-1
+
 zle-dev-cd() {
   dev cd "${${(z)BUFFER}}"
   zle .beginning-of-line

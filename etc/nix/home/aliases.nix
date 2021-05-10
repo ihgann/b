@@ -5,6 +5,8 @@
   git-fuck-everything =
     "git-abort ; git reset . ; git checkout . ; git clean -f -d";
 
+  "꩜" = "dev spin";
+
   ls = "ls --color=auto -F";
 
   jc = "journalctl";
