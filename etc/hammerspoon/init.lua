@@ -44,10 +44,10 @@ end)
 -- [2] = "com.apple.iTunes",
 appbindings.setup({"cmd", "ctrl"}, {
   [1] = "com.googlecode.iterm2",
-  [2] = "com.tidal.desktop",
+  [2] = "com.apple.Music",
   [3] = "com.brave.Browser",
   [4] = "com.tinyspeck.slackmacgap",
-  [5] = "md.obsidian",
+  [5] = nil,
   [6] = "com.apple.MobileSMS",
   [7] = "org.whispersystems.signal-desktop",
   [8] = nil,
