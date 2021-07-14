@@ -37,7 +37,6 @@ in {
     programs.gpg.enable = true;
 
     home.file.".gnupg/gpg-agent.conf".text = ''
-      disable-scdaemon
     '' + (if pkgs.stdenv.isDarwin then ''
       pinentry-program = ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
     '' else
