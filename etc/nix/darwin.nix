@@ -6,6 +6,7 @@ let
   arduino = callPackage /b/src/apps/arduino.nix { };
   shell-prompt = callPackage /b/src/shell-prompt { };
   burkeutils = callPackage /b/src/burkeutils { };
+  burkeutils2 = callPackage /b/src/burkeutils2 { };
   hammerspoon = callPackage /b/src/apps/hammerspoon.nix { };
   # kaleidoscope-relay = callPackage /b/src/kaleidoscope-relay { };
   minidev = callPackage /b/src/minidev { };
@@ -28,6 +29,7 @@ in {
     # acme-sh
     arduino
     burkeutils
+    burkeutils2
     discount
     fd
     fzf

@@ -1,5 +1,0 @@
-#!/bin/bash
-if [[ -p /dev/stdin ]]; then
-  set -- "$(cat)" "$@"
-fi
-kubectl exec "$@"

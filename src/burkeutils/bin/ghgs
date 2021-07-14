@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ghg "Shopify/$1"

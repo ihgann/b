@@ -1,6 +1,0 @@
-#!/bin/bash
-
-ref="$(git rev-parse HEAD)"
-echo "${ref}" | pbcopy
-echo "${ref}"
-

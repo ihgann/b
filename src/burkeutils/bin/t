@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if [[ $# -gt 0 && -z "${1//[0-9]/}" ]]; then
-  n=$1; shift
-  tail "-${n}" "$@"
-else
-  tail  "$@"
-fi

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-open "https://github.com/$1"
-

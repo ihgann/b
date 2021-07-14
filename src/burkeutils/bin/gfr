@@ -1,3 +1,0 @@
-#!/bin/bash
-
-git fetch -q "$@" && git reset -q --hard FETCH_HEAD

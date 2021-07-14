@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "http://$(ifconfig en0 | grep inet | awk '{print $2}' | tail -n1):8000" | pbcopy
-python -m SimpleHTTPServer
