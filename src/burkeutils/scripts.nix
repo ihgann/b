@@ -1,3 +1,0 @@
-{
-  gfro = ''gfr origin "$@"'';
-}
