@@ -69,6 +69,10 @@ nix-closure-size() {
     | nix run nixpkgs.coreutils -c numfmt --to=iec-i
 }
 
+ggg() {
+  gaac "$*" && ggn
+}
+
 source ~/.iterm2_shell_integration.zsh
 
 if [ -f ~/.nix-profile/etc/profile.d/nix.sh ]; then
