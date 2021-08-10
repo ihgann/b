@@ -58,6 +58,9 @@ in {
     home.file."Library/LaunchAgents/burke.gitpull.plist".source =
       ./home/burke.gitpull.plist;
 
+    home.file."Library/LaunchAgents/burke.logsync.plist".source =
+      ./home/burke.logsync.plist;
+
     programs.ssh = {
       enable = true;
       extraConfig = ''

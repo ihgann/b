@@ -1,4 +1,4 @@
-#!ruby --disable-gems
+#!/usr/bin/ruby --disable-gems
 # frozen_string_literal: true
 
 require('open3')

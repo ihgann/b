@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
  <key>Label</key>
- <string>burke.gitpull</string>
+ <string>burke.logsync</string>
  <key>ProgramArguments</key>
  <array>
-   <string>/Users/burke/.nix-profile/bin/logsync</string>
+   <string>/run/current-system/sw/bin/logsync</string>
  </array>
  <key>StandardErrorPath</key>
  <string>/tmp/burke.logsync.log</string>
