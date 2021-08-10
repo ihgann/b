@@ -85,6 +85,12 @@ fi
 
 export KUBECONFIG=$HOME/.kube/config
 
+export "PATH=$HOME/.local/bin:$PATH"
+
+if [ -f $HOME/.ghcup/env ]; then
+  source $HOME/.ghcup/env
+fi
+
 if [ -f /opt/dev/dev.sh ]; then
   source /opt/dev/dev.sh
 elif [ -f /run/current-system/sw/bin/dev ]; then

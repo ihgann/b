@@ -1,0 +1,97 @@
+#!ruby --disable-gems
+# frozen_string_literal: true
+
+require('open3')
+require('fileutils')
+
+module Logsync
+  GIT            = '/usr/bin/git'
+  ROOT           = '/b/logseq'
+  WORK           = File.join(ROOT, '.logsync')
+  LAST_FETCH     = File.join(WORK, 'last-update')
+  FETCH_INTERVAL = 120
+
+  GitFailedError = Class.new(StandardError)
+
+  class << self
+    def run
+      info('fetch') { fetch }
+      info('commit changes') { commit_changes }
+      info('rebase') { rebase }
+      info('push') { push }
+    rescue => e
+      system(
+        'osascript', '-e',
+        %Q{display notification "see /tmp/burke.logsync.log" with title "logsync error"}
+      )
+    end
+
+    private
+
+    def fetch
+      return(false) if age(LAST_FETCH) < FETCH_INTERVAL
+      git('fetch', 'origin', 'master')
+      touch(LAST_FETCH)
+    end
+
+    def info(title)
+      print("#{title}...")
+      if yield
+        puts(' done')
+      else
+        puts(' skipped')
+      end
+    rescue
+      puts(' error!')
+      raise
+    end
+
+    def rebase
+      git('rebase', 'origin/master')
+    end
+
+    def push
+      if rev_parse('master') == rev_parse('origin/master')
+        return(false)
+      end
+      git('push', 'origin', 'master:master')
+    end
+
+    def rev_parse(rev)
+      git('rev-parse', rev)
+    end
+
+    def commit_changes
+      unless any_changes?
+        return(false)
+      end
+      git('add', '.')
+      git('commit', '-a', '--no-gpg-sign', '-m', '[logsync] autocommit')
+    end
+
+    def any_changes?
+      changes = git('status', '--porcelain=v1')
+      changes.match?(/\S/)
+    end
+
+    def age(file)
+      (Time.now - File.mtime(file)).to_i
+    rescue Errno::ENOENT
+      10e30 # "very old"
+    end
+
+    def touch(file)
+      FileUtils.touch(LAST_FETCH)
+    end
+
+    def git(*args)
+      out, err, stat = Open3.capture3(GIT, '-C', ROOT, *args)
+      if !stat.success?
+        raise(GitFailedError, "git #{args.join(' ')}: #{err}")
+      end
+      out
+    end
+  end
+end
+
+Logsync.run if __FILE__ == $PROGRAM_NAME
