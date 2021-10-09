@@ -210,6 +210,7 @@ in {
         vim-airline
 
         # Editor Features ####################################
+        vim-abolish
         vim-surround # cs"'
         vim-repeat # cs"'...
         vim-commentary # gcap
